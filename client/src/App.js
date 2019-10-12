@@ -94,8 +94,10 @@ class App extends Component {
         <main className="main-container">
           <p>The website you shouldn't go to but can't help to...</p>
         </main>
-        {/* <PlayerList /> */}
-        <PlayerAdd postPlayer={this.postPlayer} />
+        <PlayerList />
+        <footer>
+          <PlayerAdd postPlayer={this.postPlayer} />
+        </footer>
       </div>
     );
   }

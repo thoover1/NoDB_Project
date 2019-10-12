@@ -1,5 +1,5 @@
 let players = require("../MyAPI.json");
-let id = 0;
+let id = 11;
 
 module.exports = {
   create: (req, res) => {
