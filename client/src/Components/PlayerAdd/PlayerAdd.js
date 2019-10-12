@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import "./PlayerList.css";
 
-class playerList extends Component {
+class playerAdd extends Component {
   constructor(props) {
     super(props);
 
@@ -23,12 +22,13 @@ class playerList extends Component {
     return (
       <form
         onSubmit={e => {
+          console.log("hit");
           e.preventDefault();
           this.props.postPlayer(name, position, comments);
           this.setState({ name: "", position: "", comments: "" });
         }}
       >
-        <label>Top Players</label>
+        <label>Player Name</label>
         <input
           value={name}
           onChange={e => this.universalInput("name", e.target.value)}
@@ -49,4 +49,4 @@ class playerList extends Component {
   }
 }
 
-export default playerList;
+export default playerAdd;

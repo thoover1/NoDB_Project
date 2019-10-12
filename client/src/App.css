@@ -2,10 +2,55 @@
   text-align: center;
 }
 
-.image-container {
-  width: 200px;
+header {
+  background-color: black;
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  font-size: 56px;
+  /* position: fixed; */
 }
 
-.image-container img {
-  width: 100%;
+.header-left {
 }
+
+.header-right {
+  color: white;
+  width: 70vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-right > a {
+  color: white;
+  text-decoration: none !important;
+}
+
+.main-container {
+  background-image: url("./Components/fantasyfootball2.jpg");
+  height: 80vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.main-container > p {
+  color: white;
+  font-size: 70px;
+  width: 50%;
+}
+
+/* .player {
+  height: 50vh;
+  width: 100%;
+  border: 2px solid red;
+} */

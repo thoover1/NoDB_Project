@@ -11,7 +11,7 @@ module.exports = {
       id
     };
     id++;
-    players.push({ newPlayer });
+    players.push(newPlayer);
     res.status(200).send(players);
   },
 
@@ -20,18 +20,19 @@ module.exports = {
   },
 
   update: (req, res) => {
-    const { name, position, comments } = req.body;
-    const updateID = req.params.id;
-    const playerIndex = players.findIndex(player => player.id == updateID);
-    let player = players[playerIndex];
-
-    players[playerIndex] = {
-      id: player.id,
-      name: name || player.name,
-      position: position || player.position,
-      comments: comments || player.comments
-    };
-
+    let { name, position, comments } = req.body;
+    let updateID = req.params.id;
+    let playerIndex = players.findIndex(
+      player => player.id === parseInt(updateID)
+    );
+    if (playerIndex !== -1) {
+      players[playerIndex] = {
+        id: updateID,
+        name,
+        position,
+        comments
+      };
+    }
     res.status(200).send(players);
   },
 
