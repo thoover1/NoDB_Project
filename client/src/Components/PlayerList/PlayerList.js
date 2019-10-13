@@ -1,36 +1,27 @@
 import React, { Component } from "react";
 import "./PlayerList.css";
-// import EditButton from "./Components/EditButton/EditButton";
-// import DeleteButton from "./Components/DeleteButton";
+// import EditButton from "./EditButton/EditButton";
+import DeleteButton from "./DeleteButton/DeleteButton";
 
 export default class PlayerList extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      name: "",
-      position: "",
-      comments: ""
-    };
-  }
   render() {
-    const { players } = this.state;
+    const mappedPlayers = this.props.getPlayers;
     return (
-      <div>
-        <ol>
-          {this.players.map((player, index) => {
-            return (
-              <li className="player">
-                <p>
-                  {player.name}, {player.position}
-                </p>
-                <span>{player.comments}</span>
-                {/* <EditButton putPlayer={this.putPlayer} />  */}
-                {/* <DeleteButton deletePlayer={this.deletePlayer}/> */}
-              </li>
-            );
-          })}
-        </ol>
+      <div className="allPlayers">
+        {mappedPlayers.map(player => {
+          return (
+            <ol className="player">
+              {/* TO DO: link each player ID using href */}
+              <a className="player_list_numbering">{player.id}</a>
+              <p>
+                {player.name},{player.position}
+              </p>
+              <span>{player.comments}</span>
+              <DeleteButton />
+              {/* <EditButton /> */}
+            </ol>
+          );
+        })}
       </div>
     );
   }

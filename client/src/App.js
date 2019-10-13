@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import "./App.css";
 import axios from "axios";
 import PlayerAdd from "./Components/PlayerAdd/PlayerAdd";
-// import PlayerList from "./Components/PlayerList/PlayerList";
+import PlayerList from "./Components/PlayerList/PlayerList";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       players: []
@@ -14,11 +14,17 @@ class App extends Component {
     this.getPlayers = this.getPlayers.bind(this);
     this.postPlayer = this.postPlayer.bind(this);
     // this.putPlayer = this.putPlayer.bind(this);
-    // this.deletePlayer = this.deletePlayer.bind(this);
+    this.deletePlayer = this.deletePlayer.bind(this);
   }
 
   componentDidMount() {
     this.getPlayers();
+  }
+
+  deletePlayer(id) {
+    axios.put(`/api/players?id=${id}`).then(response => {
+      this.setState({ players: response.data });
+    });
   }
 
   getPlayers() {
@@ -48,20 +54,8 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
-  // putPlayer(name, position, comments) {
-  //   const editPlayer = {
-  //     name,
-  //     position,
-  //     comments
-  //   };
-  //   axios
-  //     .put(`/api/players/${this.players.id}`, editPlayer)
-  //     .then(response => {
-  //       this.setState({
-  //         players: response.data
-  //       });
-  //     })
-  //     .catch(err => console.log(err));
+  // putPlayer(id, name, position, comments) {
+  //   axios.put(`/api/players?id=${id}`, {name, position, comments})
   // }
 
   render() {
@@ -78,7 +72,9 @@ class App extends Component {
               <img></img>
             </div>
           </div>
-          <div className="header-right">
+          {/* Will eventually make a navbar on left or rigth of page to 
+		 display href to individual players onClick instead of in the header */}
+          {/* <div className="header-right">
             <a href="#playerOne">#1</a>
             <a href="#playerTwo">#2</a>
             <a href="#playerThree">#3</a>
@@ -89,12 +85,20 @@ class App extends Component {
             <a href="#playerEight">#8</a>
             <a href="#playerNine">#9</a>
             <a href="#playerTen">#10</a>
-          </div>
+          </div> */}
         </header>
         <main className="main-container">
-          <p>The website you shouldn't go to but can't help to...</p>
+          <p>The Best Fantasy Football Advice You Can Get</p>
         </main>
-        <PlayerList />
+        <div>
+          <PlayerList
+            getPlayers={this.state.players}
+            // putPlayer={this.state.players}
+            // putPlayerFn={this.putPlayer}
+            deletePlayer={this.state.players}
+            deletePlayerFn={this.deletePlayer}
+          />
+        </div>
         <footer>
           <PlayerAdd postPlayer={this.postPlayer} />
         </footer>
