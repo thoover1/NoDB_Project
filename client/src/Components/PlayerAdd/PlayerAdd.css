@@ -35,3 +35,8 @@ form {
   position: relative;
   top: 1px;
 }
+
+.addField {
+  display: flex;
+  flex-direction: column;
+}

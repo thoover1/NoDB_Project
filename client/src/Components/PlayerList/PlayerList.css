@@ -4,11 +4,13 @@
   border: 2px solid black;
   color: white;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
   background-image: url("../listbackgroundimage.jpg");
   background-size: cover;
   background-position: center;
+  align-items: baseline;
 }
 
 .player_list_numbering {
@@ -20,13 +22,15 @@
 
 p {
   font-size: 70px;
-  color: red;
+  color: white;
 }
 
 span {
   /* max-height: 75%;
   max-width: 40%; */
-  font-size: 30px;
+  font-size: 20px;
+  height: 30%;
+  width: 50%;
   color: white;
   border: 2px solid white;
   border-radius: 4px;

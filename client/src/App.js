@@ -47,7 +47,6 @@ class App extends Component {
   }
 
   render() {
-    const { players } = this.state;
     return (
       <div className="App">
         <header>
@@ -62,7 +61,7 @@ class App extends Component {
           </div>
           <h2>Please excuse our messy site!</h2>
           {/* Will eventually make a navbar on left or rigth of page to 
-		 display href to individual players onClick instead of in the header */}
+		      display href to individual players onClick instead of in the header */}
           {/* <div className="header-right">
             <a href="#playerOne">#1</a>
             <a href="#playerTwo">#2</a>
@@ -83,7 +82,7 @@ class App extends Component {
           <PlayerList getPlayers={this.state.players} />
         </div>
         <footer>
-          <PlayerAdd postPlayer={this.postPlayer} />
+          <PlayerAdd postPlayer={this.postPlayer} className="addField" />
         </footer>
       </div>
     );

@@ -1,0 +1,31 @@
+.Modal {
+  box-shadow: inset 0px 0px 25px 0px rgb(248, 248, 129);
+  background: linear-gradient(
+    to bottom,
+    rgb(255, 255, 46) 5%,
+    rgb(255, 255, 0) 100%
+  );
+  background-color: rgb(255, 255, 46);
+  border-radius: 6px;
+  border: 1px solid rgb(255, 255, 0);
+  display: inline-block;
+  cursor: pointer;
+  color: black;
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 46px;
+  text-decoration: none;
+}
+.Modal:hover {
+  background: linear-gradient(
+    to bottom,
+    rgb(255, 255, 0) 5%,
+    rgb(255, 255, 46) 100%
+  );
+  background-color: rgb(255, 255, 0);
+}
+.Modal:active {
+  position: relative;
+  top: 1px;
+}

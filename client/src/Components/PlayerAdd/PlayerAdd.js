@@ -28,6 +28,7 @@ class playerAdd extends Component {
           this.props.postPlayer(name, position, comments);
           this.setState({ name: "", position: "", comments: "" });
         }}
+        className="addField"
       >
         <label>Player Name</label>
         <input

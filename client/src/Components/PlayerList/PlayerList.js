@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./PlayerList.css";
 import axios from "axios";
-// import EditButton from "./EditButton/EditButton";
+import EditButton from "./EditButton/EditButton";
 import DeleteButton from "./DeleteButton/DeleteButton";
 
 export default class PlayerList extends Component {
@@ -37,13 +37,13 @@ export default class PlayerList extends Component {
                   id={player.id}
                   deletePlayerFn={this.deletePlayer}
                 />
-                {/* <EditButton
+                <EditButton
                   id={player.id}
                   name={player.name}
                   position={player.position}
                   comments={player.comments}
                   editPlayerFn={this.putPlayer}
-                /> */}
+                />
               </ol>
             </div>
           );
