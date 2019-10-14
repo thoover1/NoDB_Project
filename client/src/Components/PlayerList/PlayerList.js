@@ -13,36 +13,39 @@ export default class PlayerList extends Component {
   }
 
   deletePlayer(id) {
-    console.log("*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-    axios.delete(`/api/players?id=${id}`).then(response => {
+    axios.delete(`/api/players/${id}`).then(response => {
+      document.getElementById(id).remove();
       this.setState({ players: response.data });
     });
   }
 
-  // putPlayer(id, name, position, comments) {
-  //   axios.put(`/api/players?id=${id}`, {name, position, comments})
-  // }
-
   render() {
     const mappedPlayers = this.props.getPlayers;
-    // let increment_i = 0;
     return (
       <div className="allPlayers">
         {mappedPlayers.map(player => {
-          let player_id = player.id;
           return (
-            <ol className="player">
-              {/* TO DO: link each player ID using href */}
-              <a className="player_list_numbering">{player.id}</a>
-              <p>
-                {player.name},{player.position}
-              </p>
-              <span>{player.comments}</span>
-              <DeleteButton DeleteFunction={this.deletePlayer} />
-              <div id={"playerinfo" + player.id} hidden>
-                {player.id}
-              </div>
-            </ol>
+            <div key={player.id}>
+              <ol className="player" id={player.id}>
+                {/* TO DO: link each player ID using href */}
+                <a className="player_list_numbering">{player.id}</a>
+                <p>
+                  {player.name},{player.position}
+                </p>
+                <textarea>{player.comments}</textarea>
+                <DeleteButton
+                  id={player.id}
+                  deletePlayerFn={this.deletePlayer}
+                />
+                {/* <EditButton
+                  id={player.id}
+                  name={player.name}
+                  position={player.position}
+                  comments={player.comments}
+                  editPlayerFn={this.putPlayer}
+                /> */}
+              </ol>
+            </div>
           );
         })}
       </div>
