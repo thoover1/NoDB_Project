@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./DeleteButton.css";
 
 class DeleteButton extends Component {
   constructor(props) {
@@ -9,7 +10,12 @@ class DeleteButton extends Component {
     const { deletePlayerFn } = this.props;
     return (
       <div>
-        <button onClick={() => deletePlayerFn(this.props.id)}>Delete</button>
+        <button
+          className="deleteButton"
+          onClick={() => deletePlayerFn(this.props.id)}
+        >
+          He Gone'
+        </button>
       </div>
     );
   }

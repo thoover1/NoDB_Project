@@ -60,6 +60,7 @@ class App extends Component {
               <img></img>
             </div>
           </div>
+          <h2>Please excuse our messy site!</h2>
           {/* Will eventually make a navbar on left or rigth of page to 
 		 display href to individual players onClick instead of in the header */}
           {/* <div className="header-right">

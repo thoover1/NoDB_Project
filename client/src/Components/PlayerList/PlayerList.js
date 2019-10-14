@@ -32,7 +32,7 @@ export default class PlayerList extends Component {
                 <p>
                   {player.name},{player.position}
                 </p>
-                <textarea>{player.comments}</textarea>
+                <span>{player.comments}</span>
                 <DeleteButton
                   id={player.id}
                   deletePlayerFn={this.deletePlayer}

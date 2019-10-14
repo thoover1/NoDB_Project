@@ -4,7 +4,13 @@
   width: 100%;
 }
 
-header {
+header > h2 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 30px;
+  color: yellow;
+  background-color: black;
 }
 
 .header-left {
@@ -14,12 +20,12 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: blue;
   font-size: 150px;
   /* position: fixed; */
 }
 
-.header-right {
+/* .header-right {
   color: white;
   width: 70vw;
   display: flex;
@@ -29,7 +35,7 @@ header {
 .header-right > a {
   color: white;
   text-decoration: none !important;
-}
+} */
 
 .main-container {
   background-image: url("./Components/fantasyfootball2.jpg");
@@ -47,11 +53,17 @@ header {
 
 .main-container > p {
   color: white;
-  font-size: 70px;
+  font-size: 90px;
   width: 50%;
 }
 
 footer {
+  color: white;
+  background-color: black;
   height: 20vh;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

@@ -1,0 +1,37 @@
+form {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.submitButton {
+  box-shadow: inset 0px 0px 25px 0px green;
+  background: linear-gradient(
+    to bottom,
+    rgb(127, 182, 127) 5%,
+    rgb(99, 250, 99) 100%
+  );
+  background-color: lightgreen;
+  border-radius: 6px;
+  border: 1px solid lightgreen;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px 46px;
+  text-decoration: none;
+}
+.deleteButton > button:hover {
+  background: linear-gradient(
+    to bottom,
+    rgb(86, 175, 86) 5%,
+    rgb(58, 219, 58) 100%
+  );
+  background-color: green;
+}
+.deleteButton > button:active {
+  position: relative;
+  top: 1px;
+}

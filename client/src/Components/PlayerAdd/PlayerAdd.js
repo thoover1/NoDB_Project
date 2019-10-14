@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./PlayerAdd.css";
 
 class playerAdd extends Component {
   constructor(props) {
@@ -43,7 +44,7 @@ class playerAdd extends Component {
           value={comments}
           onChange={e => this.universalInput("comments", e.target.value)}
         />
-        <button>Submit</button>
+        <button className="submitButton">Submit</button>
       </form>
     );
   }
