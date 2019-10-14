@@ -13,18 +13,10 @@ class App extends Component {
     };
     this.getPlayers = this.getPlayers.bind(this);
     this.postPlayer = this.postPlayer.bind(this);
-    // this.putPlayer = this.putPlayer.bind(this);
-    this.deletePlayer = this.deletePlayer.bind(this);
   }
 
   componentDidMount() {
     this.getPlayers();
-  }
-
-  deletePlayer(id) {
-    axios.put(`/api/players?id=${id}`).then(response => {
-      this.setState({ players: response.data });
-    });
   }
 
   getPlayers() {
@@ -53,10 +45,6 @@ class App extends Component {
       })
       .catch(err => console.log(err));
   }
-
-  // putPlayer(id, name, position, comments) {
-  //   axios.put(`/api/players?id=${id}`, {name, position, comments})
-  // }
 
   render() {
     const { players } = this.state;
@@ -91,13 +79,7 @@ class App extends Component {
           <p>The Best Fantasy Football Advice You Can Get</p>
         </main>
         <div>
-          <PlayerList
-            getPlayers={this.state.players}
-            // putPlayer={this.state.players}
-            // putPlayerFn={this.putPlayer}
-            deletePlayer={this.state.players}
-            deletePlayerFn={this.deletePlayer}
-          />
+          <PlayerList getPlayers={this.state.players} />
         </div>
         <footer>
           <PlayerAdd postPlayer={this.postPlayer} />
